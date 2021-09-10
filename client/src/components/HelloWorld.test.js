@@ -8,7 +8,7 @@ const renderWithRouter = (ui, { route = '/' } = {}) => {
   return render(ui, { wrapper: BrowserRouter });
 };
 
-describe('HelloWorld', () => {
+describe('helloWorld', () => {
   it('renders with message', async () => {
     expect.hasAssertions();
 

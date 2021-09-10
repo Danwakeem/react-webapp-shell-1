@@ -9,9 +9,9 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
+import NavBar from '@components/NavBar';
 import Routes from './Routes';
 import theme from './theme';
-import NavBar from '@components/NavBar';
 
 ReactDOM.render(
   <StrictMode>
