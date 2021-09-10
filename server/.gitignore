@@ -1,0 +1,13 @@
+coverage/**
+.serverless
+.webpack/**
+.env
+.env.*
+.DS_Store
+dist/**
+**/node_modules/**
+**/.DS_Store
+.cdk.staging
+cdk.out
+.envrc
+save/**

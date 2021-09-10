@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "plugin:jest/all"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "fetch": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "array-bracket-spacing": "off",
+    "no-shadow": "off",
+    "semi": "error",
+    "no-restricted-syntax": "off",
+    "no-await-in-loop": "off",
+    "no-console": ["error", { "allow": ["error"] }],
+    "jest/prefer-expect-assertions": "off",
+    "import/no-extraneous-dependencies": [ "error", { "devDependencies": true } ],
+    "jest/expect-expect": ["error", { "assertFunctionNames": [ "expect", "request.**.expect" ] }],
+    "sort-imports": ["error", {
+      "ignoreCase": false,
+      "ignoreDeclarationSort": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+      "allowSeparatedGroups": false
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": { }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}

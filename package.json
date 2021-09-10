@@ -1,0 +1,18 @@
+{
+  "name": "react-webapp-shell-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm ci --prefix server && npm ci --prefix client",
+    "start": "concurrently -n server,client \"npm start --prefix server\" \"npm run dev --prefix client\"",
+    "lint": "npm run lint --prefix server && npm run lint --prefix client",
+    "test": "npm run coverage --prefix server && npm run coverage --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,50 @@
+service: ahub-hiring
+useDotenv: true
+configValidationMode: error
+
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: nodejs14.x
+  region: us-east-2
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    STAGE: ${opt:stage}
+
+plugins:
+  - serverless-offline
+
+package:
+  individually: true
+  patterns:
+    - '!coverage/**'
+    - '!.serverless/**'
+    - '!src/**/*.test.js'
+    - '!src/**/*.snap'
+    - '!.*'
+    - '!*.sh'
+    - '!assets/**'
+    - '!package.json'
+    - '!.package-lock.json'
+    - '!README.md'
+    - '!.eslintrc.json'
+    - '!.envrc'
+    - '!STYLEGUIDE.md'
+    - '!.husky/**'
+
+functions:
+  app:
+    handler: src/api.handler
+    timeout: 20
+    events:
+      - http:
+          path: / # this matches the base path
+          method: ANY
+          cors: true
+      - http:
+          path: /{any+} # this matches any path, the token 'any' doesn't mean anything special
+          method: ANY
+          cors: true
+    provisionedConcurrency: 1
