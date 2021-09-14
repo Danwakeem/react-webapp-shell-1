@@ -22,7 +22,7 @@ const NavBar = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography data-testid="nav-bar-title" variant="h6" className={classes.title}>
+          <Typography className={classes.title} data-testid="nav-bar-title" variant="h6">
             Sample Menu
           </Typography>
         </Toolbar>
